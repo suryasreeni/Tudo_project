@@ -1,11 +1,59 @@
 {% extends 'base.html '%}
 {% block content %}
 
-<form method="POST">
-    {% csrf_token %}
-    <p>Are you sure this task is done?</p>
-    <button type="submit">confirm</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-</form>
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+    <title>Confirmation Form</title>
+</head>
+<body>
+
+    <form method="POST">
+        {% csrf_token %}
+        <p>Are you sure this task is done?</p>
+        <button type="submit">Confirm</button>
+    </form>
+
+</body>
+</html>
 {% endblock %}
